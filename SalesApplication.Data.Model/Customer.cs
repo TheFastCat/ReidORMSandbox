@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISalesAppORM
+namespace SalesApplication.Data.Model
 {
-    public interface ISalesAppORM
+    public class Customer
     {
+        // TODO extend to hold the information needed for a Customer
     }
 }

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ISalesAppORM;
 using Ninject;
+using SalesApplication.Data.Adapter.Contract;
 
 namespace App
 {
@@ -13,7 +13,7 @@ namespace App
         static void Main(string[] args)
         {
             IKernel ninjectKernel = new StandardKernel();
-            ISalesAppORM.ISalesAppORM iSalesAppORM = ninjectKernel.TryGet<ISalesAppORM.ISalesAppORM>();
+            ISalesAppData iSalesAppData = ninjectKernel.TryGet<ISalesAppData>();
         }
     }
 }

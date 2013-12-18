@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SalesAppORMDapperImplTest.cs" />
+    <Compile Include="CapwairDataTest.cs" />
+    <Compile Include="DapperAdapterTest.cs" />
     <Compile Include="NinjectExtensionsSalesApplicationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,17 +57,33 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ISalesAppORM\ISalesAppORM.csproj">
-      <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
-      <Name>ISalesAppORM</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ninject.Extensions.SalesApplication\Ninject.Extensions.SalesApplication.csproj">
       <Project>{bad98a34-75ca-4011-a8d1-67e0f41cd5af}</Project>
       <Name>Ninject.Extensions.SalesApplication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SalesAppORMDapperImpl\SalesAppORMDapperImpl.csproj">
+    <ProjectReference Include="..\SalesApplication.Data.Adapter.Contract\SalesApplication.Data.Adapter.Contract.csproj">
+      <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
+      <Name>SalesApplication.Data.Adapter.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.Adapter.Legacy.SQLServer\SalesApplication.Data.Adapter.Legacy.SQLServer.csproj">
+      <Project>{826f355b-a323-4bc3-b9a7-5e88ac4ea7e8}</Project>
+      <Name>SalesApplication.Data.Adapter.Legacy.SQLServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.Contract\SalesApplication.Data.Contract.csproj">
+      <Project>{9ebe9008-652e-43e4-a31c-0a0f558773a2}</Project>
+      <Name>SalesApplication.Data.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
+      <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
+      <Name>SalesApplication.Data.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.ORM.Contract\SalesApplication.Data.ORM.Contract.csproj">
+      <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
+      <Name>SalesApplication.Data.ORM.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.ORM\SalesApplication.Data.ORM.csproj">
       <Project>{efe90e25-b297-4448-be73-4af3e2408ad3}</Project>
-      <Name>SalesAppORMDapperImpl</Name>
+      <Name>SalesApplication.Data.ORM</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

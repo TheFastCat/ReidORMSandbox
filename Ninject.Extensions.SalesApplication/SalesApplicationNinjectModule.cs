@@ -6,8 +6,10 @@ using Ninject;
 using Ninject.Modules;
 using Ninject.Syntax;
 using System.Configuration;
-using ISalesAppORM;
-using SalesAppORMDapperImpl;
+using SalesApplication.Data.ORM;
+using SalesApplication.Data.ORM.Contract;
+using SalesApplication.Data.Adapter.Contract;
+using SalesApplication.Data.Adapter.Legacy.SQLServer;
 
 namespace Ninject.Extensions.SalesApplication
 {
@@ -56,7 +58,8 @@ namespace Ninject.Extensions.SalesApplication
         /// </summary>
         public override void Load()
         {
-            Bind<ISalesAppORM.ISalesAppORM>().To<SalesAppORMDapperImpl.SalesAppORMDapperImpl>().InSingletonScope().WithConstructorArgument("connectionStr", CONNECTION_STRING);
+            Bind<ISalesAppORM>().To<DapperAdapter>().InSingletonScope().WithConstructorArgument("connectionStr", CONNECTION_STRING);
+            Bind<ISalesAppData>().To<CapwairData>().InSingletonScope();
         }
     }
 }

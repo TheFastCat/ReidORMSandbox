@@ -54,13 +54,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ISalesAppORM\ISalesAppORM.csproj">
-      <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
-      <Name>ISalesAppORM</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ninject.Extensions.SalesApplication\Ninject.Extensions.SalesApplication.csproj">
       <Project>{bad98a34-75ca-4011-a8d1-67e0f41cd5af}</Project>
       <Name>Ninject.Extensions.SalesApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.Adapter.Contract\SalesApplication.Data.Adapter.Contract.csproj">
+      <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
+      <Name>SalesApplication.Data.Adapter.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

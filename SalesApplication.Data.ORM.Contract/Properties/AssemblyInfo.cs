@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SalesAppORMDapperImpl")]
+[assembly: AssemblyTitle("SalesApplication.Data.ORM.Contract")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SalesAppORMDapperImpl")]
+[assembly: AssemblyProduct("SalesApplication.Data.ORM.Contract")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3246e277-7c01-4633-822d-caad5859eee5")]
+[assembly: Guid("88847fca-5648-4966-ac17-89d54bf7edaa")]
 
 // Version information for an assembly consists of the following four values:
 //

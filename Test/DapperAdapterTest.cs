@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using ISalesAppORM;
+using SalesApplication.Data.ORM.Contract;
 using System.Diagnostics;
-using SalesAppORMDapperImpl;
+using SalesApplication.Data.ORM;
 
 namespace Test
 {
@@ -14,14 +14,14 @@ namespace Test
     /// [TestFixture] for SalesAppORMDapperImpl
     /// </summary>
     [TestFixture]
-    public class SalesAppORMDapperImplTest
+    public class DapperAdapterTest
     {
-        ISalesAppORM.ISalesAppORM _iSalesAppORM;
+        ISalesAppORM _iSalesAppORM;
 
         [TestFixtureSetUp]
         public void TextFixtureSetup()
         {
-            _iSalesAppORM = new SalesAppORMDapperImpl.SalesAppORMDapperImpl("Data Source=svclosq51;Initial Catalog=CapwairDB;Persist Security Info=True;User ID=aura;Password=lauraaura");
+            _iSalesAppORM = new DapperAdapter("Data Source=svclosq51;Initial Catalog=CapwairDB;Persist Security Info=True;User ID=aura;Password=lauraaura");
         }
 
         [TestFixtureTearDown]
@@ -39,13 +39,13 @@ namespace Test
         [TearDown]
         public void TearDown()
         {
-            _iSalesAppORM = null;
         }
 
         [Test]
-        public void SalesAppORMDapperImplTest()
+        public void SimpleTest()
         {
-            
+            Assert.IsNotNull(_iSalesAppORM);
+            Assert.IsInstanceOf<DapperAdapter>(_iSalesAppORM);
         }
     }
 }
