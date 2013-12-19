@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.Adapter.Legacy.SQLServer", "SalesApplication.Data.Adapter.Legacy.SQLServer\SalesApplication.Data.Adapter.Legacy.SQLServer.csproj", "{826F355B-A323-4BC3-B9A7-5E88AC4EA7E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninject.Extensions.SalesApplication", "Ninject.Extensions.SalesApplication\Ninject.Extensions.SalesApplication.csproj", "{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4CDBD263-62DA-4867-AB90-398735722B89}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{428E40EA-3394-416C-9722-91EA63C50940}"
@@ -20,13 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{428E40
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.Adapter.Contract", "SalesApplication.Data.Adapter.Contract\SalesApplication.Data.Adapter.Contract.csproj", "{65EF7049-D45D-4C64-9E8D-E6081944B138}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.Contract", "SalesApplication.Data.Contract\SalesApplication.Data.Contract.csproj", "{9EBE9008-652E-43E4-A31C-0A0F558773A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.ORM.Contract", "SalesApplication.Data.ORM.Contract\SalesApplication.Data.ORM.Contract.csproj", "{35D3B13D-5104-4945-A33F-F2E1CE29B2A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.ORM", "SalesApplication.Data.ORM\SalesApplication.Data.ORM.csproj", "{EFE90E25-B297-4448-BE73-4AF3E2408AD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.Model", "SalesApplication.Data.Model\SalesApplication.Data.Model.csproj", "{7F6A908F-140A-49A6-A53A-C9997A1B854B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninject.Extensions.SalesApplication.Api", "Ninject.Extensions.SalesApplication.Api\Ninject.Extensions.SalesApplication.Api.csproj", "{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +40,6 @@ Global
 		{826F355B-A323-4BC3-B9A7-5E88AC4EA7E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{826F355B-A323-4BC3-B9A7-5E88AC4EA7E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{826F355B-A323-4BC3-B9A7-5E88AC4EA7E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4CDBD263-62DA-4867-AB90-398735722B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4CDBD263-62DA-4867-AB90-398735722B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CDBD263-62DA-4867-AB90-398735722B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,10 +48,6 @@ Global
 		{65EF7049-D45D-4C64-9E8D-E6081944B138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65EF7049-D45D-4C64-9E8D-E6081944B138}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65EF7049-D45D-4C64-9E8D-E6081944B138}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EBE9008-652E-43E4-A31C-0A0F558773A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EBE9008-652E-43E4-A31C-0A0F558773A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EBE9008-652E-43E4-A31C-0A0F558773A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EBE9008-652E-43E4-A31C-0A0F558773A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35D3B13D-5104-4945-A33F-F2E1CE29B2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35D3B13D-5104-4945-A33F-F2E1CE29B2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35D3B13D-5104-4945-A33F-F2E1CE29B2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,6 +60,10 @@ Global
 		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -54,13 +54,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ninject.Extensions.SalesApplication\Ninject.Extensions.SalesApplication.csproj">
+    <ProjectReference Include="..\Ninject.Extensions.SalesApplication.Api\Ninject.Extensions.SalesApplication.Api.csproj">
       <Project>{bad98a34-75ca-4011-a8d1-67e0f41cd5af}</Project>
-      <Name>Ninject.Extensions.SalesApplication</Name>
+      <Name>Ninject.Extensions.SalesApplication.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\SalesApplication.Data.Adapter.Contract\SalesApplication.Data.Adapter.Contract.csproj">
       <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
       <Name>SalesApplication.Data.Adapter.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
+      <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
+      <Name>SalesApplication.Data.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,5 +9,9 @@ namespace SalesApplication.Data.Model
     public class Customer
     {
         // TODO extend to hold the information needed for a Customer
+        public string Name {get;set;}
+        public int Number { get; set; }
+        public string URL { get; set; }
+        public string Email { get; set; }
     }
 }

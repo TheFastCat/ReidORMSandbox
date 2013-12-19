@@ -10,7 +10,8 @@ using SalesApplication.Data.ORM;
 using SalesApplication.Data.ORM.Contract;
 using SalesApplication.Data.Adapter.Contract;
 using SalesApplication.Data.Adapter.Legacy.SQLServer;
-using SalesApplication.Data.Model;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Test
 {
@@ -22,11 +23,11 @@ namespace Test
     {
         IKernel _kernel;
         ISalesAppData _iSalesAppData;
+        IDbConnection _idbConnection;
 
         [TestFixtureSetUp]
         public void TextFixtureSetup()
         {
-            Debugger.Launch();
              _kernel = new StandardKernel();         
         }
 
@@ -47,16 +48,22 @@ namespace Test
         {
         }
 
+        [Description("Verifies Ninject.Extensions.SalesApplication.Api's bindings are as expected")]
         [Test]
-        public void DataBindingAndCompositionTest()
+        public void NinjectCompositionTest()
         {
-            _iSalesAppData = _kernel.TryGet<ISalesAppData>();    
-          
+            _idbConnection = _kernel.TryGet<IDbConnection>();
+            Assert.IsNotNull(_idbConnection);
+            Assert.IsInstanceOf<SqlConnection>(_idbConnection);
+            Assert.IsNotNullOrEmpty(_idbConnection.ConnectionString);
+            Assert.AreEqual(ConnectionState.Closed, _idbConnection.State);
+
+            _iSalesAppData = _kernel.TryGet<ISalesAppData>();
+            Assert.IsNotNull(_iSalesAppData);
             Assert.IsInstanceOf<CapwairData>(_iSalesAppData);
+
             // verify that the impl of the ORM is what we expect
             Assert.AreEqual(typeof(DapperAdapter), _iSalesAppData.ORM);
-
-            IList<Customer> customers = _iSalesAppData.GetAllCustomers();
         }
     }
 }

@@ -50,17 +50,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SalesApplication.Data.Contract\SalesApplication.Data.Contract.csproj">
-      <Project>{9ebe9008-652e-43e4-a31c-0a0f558773a2}</Project>
-      <Name>SalesApplication.Data.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
       <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
       <Name>SalesApplication.Data.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\SalesApplication.Data.ORM.Contract\SalesApplication.Data.ORM.Contract.csproj">
       <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
-      <Name>ISalesAppORM</Name>
+      <Name>SalesApplication.Data.ORM.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

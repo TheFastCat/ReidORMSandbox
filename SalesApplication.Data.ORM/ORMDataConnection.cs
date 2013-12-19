@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SalesApplication.Data.ORM.Contract;
-using SalesApplication.Data.Contract;
 using SalesApplication.Data.Model;
+using System.Data;
 
 namespace SalesApplication.Data.ORM
 {
-    public abstract class ORMDataConnection : IDataConnection
+    public abstract class ORMDataConnection
     {
-        private readonly string _connStr;
+        private readonly IDbConnection _dbConnection;
 
-        public ORMDataConnection(string connectionStr)
+        public ORMDataConnection(IDbConnection dbConnection)
         {
-            _connStr = connectionStr;
+            _dbConnection = dbConnection;
         }
 
-        public string ConnectionString
+        protected IDbConnection DbConnection
         {
-            get { return _connStr; }
+            get { return _dbConnection; }
         }
     }
 }
