@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DapperAdapter.cs" />
-    <Compile Include="ORMDataConnection.cs" />
+    <Compile Include="Base\ORMDataConnection.cs" />
+    <Compile Include="Implementation\Massive.cs" />
+    <Compile Include="MassiveAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CDBD263-62DA-4867-AB90-398735722B89}</ProjectGuid>
+    <ProjectGuid>{A3FFEB01-84C2-4283-96D4-05691FD05DFB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>Test</AssemblyName>
+    <RootNamespace>SalesApplication.Api</RootNamespace>
+    <AssemblyName>SalesApplication.Api</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -31,24 +31,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject">
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
@@ -60,26 +65,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiTest.cs" />
-    <Compile Include="CapwairDataTest.cs" />
-    <Compile Include="MassiveAdapterTest.cs" />
-    <Compile Include="DapperAdapterTest.cs" />
-    <Compile Include="NinjectExtensionsSalesApplicationTest.cs" />
+    <Compile Include="CustomerAddressesController.cs" />
+    <Compile Include="CustomerPhonesController.cs" />
+    <Compile Include="CustomerController.cs" />
+    <Compile Include="Ninject\NinjectDependencyResolver .cs" />
+    <Compile Include="Ninject\NinjectDependencyScope .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ninject.Extensions.SalesApplication.Api\Ninject.Extensions.SalesApplication.Api.csproj">
-      <Project>{bad98a34-75ca-4011-a8d1-67e0f41cd5af}</Project>
-      <Name>Ninject.Extensions.SalesApplication.Api</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SalesApplication.Api\SalesApplication.Api.csproj">
-      <Project>{a3ffeb01-84c2-4283-96d4-05691fd05dfb}</Project>
-      <Name>SalesApplication.Api</Name>
-    </ProjectReference>
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SalesApplication.Data.Adapter.Contract\SalesApplication.Data.Adapter.Contract.csproj">
       <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
       <Name>SalesApplication.Data.Adapter.Contract</Name>
@@ -88,22 +87,8 @@
       <Project>{826f355b-a323-4bc3-b9a7-5e88ac4ea7e8}</Project>
       <Name>SalesApplication.Data.Adapter.Legacy.SQLServer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
-      <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
-      <Name>SalesApplication.Data.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SalesApplication.Data.ORM.Contract\SalesApplication.Data.ORM.Contract.csproj">
-      <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
-      <Name>SalesApplication.Data.ORM.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SalesApplication.Data.ORM\SalesApplication.Data.ORM.csproj">
-      <Project>{efe90e25-b297-4448-be73-4af3e2408ad3}</Project>
-      <Name>SalesApplication.Data.ORM</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,9 +21,7 @@ namespace Ninject.Extensions.SalesApplication
     public class SalesApplicationNinjectModule : NinjectModule
     {
         private readonly string CONNECTION_STRING;
-        private readonly string YOUR_VALUE_HERE = "YOUR_VALUE_HERE";
-
-        private readonly string CONFIGURATION_CONNECTION_STRING = "SalesApplication:NinjectBindings:DBConnStr";
+        private readonly string CONFIGURATION_CONNECTION_STRING = "Capwair.Test";
 
         public SalesApplicationNinjectModule()
         {
@@ -32,17 +30,8 @@ namespace Ninject.Extensions.SalesApplication
             //without them auto-binding will fail...
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            #region    Create Missing Configuration Stubs if Missing
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(CONFIGURATION_CONNECTION_STRING))
-            {
-                config.AppSettings.Settings.Add(CONFIGURATION_CONNECTION_STRING, YOUR_VALUE_HERE);
-                config.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection("AppSettings");
-            }
-            #endregion Create Missing Configuration Stubs if Missing
-
             #region    Read Configuration Settings from App.Config
-            CONNECTION_STRING = ConfigurationManager.AppSettings[CONFIGURATION_CONNECTION_STRING];
+            CONNECTION_STRING = ConfigurationManager.ConnectionStrings[CONFIGURATION_CONNECTION_STRING].ConnectionString;
             #endregion Read Configuration Settings from App.Config
 
             #region    Error on Missing
@@ -61,7 +50,8 @@ namespace Ninject.Extensions.SalesApplication
         public override void Load()
         {
             Bind<IDbConnection>().To<SqlConnection>().InSingletonScope().WithConstructorArgument("connectionString", CONNECTION_STRING);
-            Bind<ISalesAppORM>().To<DapperAdapter>().InSingletonScope();
+            //Bind<ISalesAppORM>().To<DapperAdapter>().InSingletonScope();
+            Bind<ISalesAppORM>().To<MassiveAdapter>().InSingletonScope();
             Bind<ISalesAppData>().To<CapwairData>().InSingletonScope();
         }
     }

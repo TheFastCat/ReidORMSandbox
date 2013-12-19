@@ -63,7 +63,8 @@ namespace Test
             Assert.IsInstanceOf<CapwairData>(_iSalesAppData);
 
             // verify that the impl of the ORM is what we expect
-            Assert.AreEqual(typeof(DapperAdapter), _iSalesAppData.ORM);
+            //Assert.AreEqual(typeof(DapperAdapter), _iSalesAppData.ORM);
+            Assert.AreEqual(typeof(MassiveAdapter), _iSalesAppData.ORM);
         }
     }
 }

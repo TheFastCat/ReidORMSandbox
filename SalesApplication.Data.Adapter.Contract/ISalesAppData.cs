@@ -15,10 +15,10 @@ namespace SalesApplication.Data.Adapter.Contract
         Type ORM { get; }
         
         // TODO define all data operations wanted/needed by the SalesApplication
-        IList<Customer> GetAllCustomers();
+        IEnumerable<dynamic> GetAllCustomers();
 
-        IList<Address> GetAllAddresses();
+        IEnumerable<dynamic> GetAllAddresses();
 
-        IList<PhoneNumber> GetAllPhoneNumbers();
+        IEnumerable<dynamic> GetAllPhoneNumbers();
     }
 }

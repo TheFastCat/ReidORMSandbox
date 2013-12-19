@@ -19,9 +19,9 @@ namespace App
             IKernel ninjectKernel = new StandardKernel();
             ISalesAppData iSalesAppData = ninjectKernel.TryGet<ISalesAppData>();
 
-            IList<Customer>    customers    = iSalesAppData.GetAllCustomers();
-            IList<Address>     addresses    = iSalesAppData.GetAllAddresses();
-            IList<PhoneNumber> phoneNumbers = iSalesAppData.GetAllPhoneNumbers();
+            IEnumerable<dynamic> customers    = iSalesAppData.GetAllCustomers();
+            IEnumerable<dynamic> addresses    = iSalesAppData.GetAllAddresses();
+            IEnumerable<dynamic> phoneNumbers = iSalesAppData.GetAllPhoneNumbers();
         }
     }
 }

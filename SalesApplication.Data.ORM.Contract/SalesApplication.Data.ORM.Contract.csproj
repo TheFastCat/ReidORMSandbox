@@ -42,12 +42,6 @@
     <Compile Include="ISalesAppORM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
-      <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
-      <Name>SalesApplication.Data.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

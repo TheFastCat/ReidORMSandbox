@@ -8,6 +8,7 @@ using Dapper;
 using SalesApplication.Data.Model;
 using System.Data.SqlClient;
 using System.Data;
+using SalesApplication.Data.ORM.Base;
 
 
 namespace SalesApplication.Data.ORM
@@ -20,7 +21,7 @@ namespace SalesApplication.Data.ORM
             //todo: initialize any construction of Dapper required components...
         }
 
-        public IList<Customer> GetCustomersFromSP(string storedProcedureName)
+        IEnumerable<dynamic> ISalesAppORM.GetCustomersFromSP(string storedProcedureName)
         {
             IList<Customer> toReturn = null;
 
@@ -42,7 +43,7 @@ namespace SalesApplication.Data.ORM
             return toReturn;
         }
 
-        public IList<Address> GetCustomerAddressesFromSP(string storedProcedureName)
+        IEnumerable<dynamic> ISalesAppORM.GetCustomerAddressesFromSP(string storedProcedureName)
         {
             IList<Address> toReturn = null;
 
@@ -64,7 +65,7 @@ namespace SalesApplication.Data.ORM
             return toReturn;
         }
 
-        public IList<PhoneNumber> GetCustomerPhoneNumbersFromSP(string storedProcedureName)
+        IEnumerable<dynamic> ISalesAppORM.GetCustomerPhoneNumbersFromSP(string storedProcedureName)
         {
             IList<PhoneNumber> toReturn = null;
 

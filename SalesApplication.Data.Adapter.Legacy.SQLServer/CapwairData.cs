@@ -21,17 +21,17 @@ namespace SalesApplication.Data.Adapter.Legacy.SQLServer
         public Type ORM { get { return _iSalesAppORM.GetType(); } }
 
         /// TODO: implement method injection of stored procedures...
-        public IList<Customer> GetAllCustomers()
+        IEnumerable<dynamic> ISalesAppData.GetAllCustomers()
         {
             return _iSalesAppORM.GetCustomersFromSP("dbo.ObjCustomer");
         }
 
-        public IList<Address> GetAllAddresses()
+        IEnumerable<dynamic> ISalesAppData.GetAllAddresses()
         {
             return _iSalesAppORM.GetCustomerAddressesFromSP("dbo.ObjCustomerAddresses");
         }
 
-        public IList<PhoneNumber> GetAllPhoneNumbers()
+        IEnumerable<dynamic> ISalesAppData.GetAllPhoneNumbers()
         {
             return _iSalesAppORM.GetCustomerPhoneNumbersFromSP("dbo.ObjCustomerPhones");
         }

@@ -18,7 +18,7 @@ namespace Test
     /// </summary>
     [Category("LocalIntegration")]
     [TestFixture]
-    public class DapperAdapterTest
+    public class MassiveAdapterTest
     {
         ISalesAppORM _iSalesAppORM;
         private string CONNECTION_STRING;
@@ -29,7 +29,7 @@ namespace Test
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             CONNECTION_STRING = ConfigurationManager.ConnectionStrings[CONFIGURATION_CONNECTION_STRING].ConnectionString;
-            _iSalesAppORM = new DapperAdapter(new SqlConnection(CONNECTION_STRING));
+            _iSalesAppORM = new MassiveAdapter(new SqlConnection(CONNECTION_STRING));
         }
 
         [TestFixtureTearDown]
@@ -49,10 +49,10 @@ namespace Test
 
         [Description("ORM integration test")]
         [Test, Explicit]
-        public void DapperIntegrationTest()
+        public void MassiveIntegrationTest()
         {
             Assert.IsNotNull(_iSalesAppORM);
-            Assert.IsInstanceOf<DapperAdapter>(_iSalesAppORM);
+            Assert.IsInstanceOf<MassiveAdapter>(_iSalesAppORM);
 
             IEnumerable<dynamic> customers = _iSalesAppORM.GetCustomersFromSP("ObjCustomer");
             Assert.IsNotNull(customers);
