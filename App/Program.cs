@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject;
 using SalesApplication.Data.Adapter.Contract;
-using SalesApplication.Data.Model;
 using System.Diagnostics;
 
 namespace App

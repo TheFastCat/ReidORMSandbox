@@ -52,10 +52,6 @@
       <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
       <Name>SalesApplication.Data.Adapter.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
-      <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
-      <Name>SalesApplication.Data.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SalesApplication.Data.ORM.Contract\SalesApplication.Data.ORM.Contract.csproj">
       <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
       <Name>SalesApplication.Data.ORM.Contract</Name>

@@ -22,8 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.ORM.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.ORM", "SalesApplication.Data.ORM\SalesApplication.Data.ORM.csproj", "{EFE90E25-B297-4448-BE73-4AF3E2408AD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Data.Model", "SalesApplication.Data.Model\SalesApplication.Data.Model.csproj", "{7F6A908F-140A-49A6-A53A-C9997A1B854B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninject.Extensions.SalesApplication.Api", "Ninject.Extensions.SalesApplication.Api\Ninject.Extensions.SalesApplication.Api.csproj", "{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApplication.Api", "SalesApplication.Api\SalesApplication.Api.csproj", "{A3FFEB01-84C2-4283-96D4-05691FD05DFB}"
@@ -58,10 +56,6 @@ Global
 		{EFE90E25-B297-4448-BE73-4AF3E2408AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE90E25-B297-4448-BE73-4AF3E2408AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE90E25-B297-4448-BE73-4AF3E2408AD3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F6A908F-140A-49A6-A53A-C9997A1B854B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAD98A34-75CA-4011-A8D1-67E0F41CD5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU

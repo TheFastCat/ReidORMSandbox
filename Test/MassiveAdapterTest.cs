@@ -7,7 +7,6 @@ using NUnit.Framework;
 using SalesApplication.Data.ORM.Contract;
 using System.Diagnostics;
 using SalesApplication.Data.ORM;
-using SalesApplication.Data.Model;
 using System.Data.SqlClient;
 using System.Configuration;
 

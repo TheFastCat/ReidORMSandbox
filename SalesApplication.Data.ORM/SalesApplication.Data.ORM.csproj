@@ -35,6 +35,15 @@
     <Reference Include="Dapper">
       <HintPath>..\packages\Dapper.1.13\lib\net45\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Simple.Data">
+      <HintPath>..\packages\Simple.Data.Core.0.19.0.0\lib\net40\Simple.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.Ado">
+      <HintPath>..\packages\Simple.Data.Ado.0.19.0.0\lib\net40\Simple.Data.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.SqlServer">
+      <HintPath>..\packages\Simple.Data.SqlServer.0.19.0.0\lib\net40\Simple.Data.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -50,12 +59,9 @@
     <Compile Include="Implementation\Massive.cs" />
     <Compile Include="MassiveAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleDataAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SalesApplication.Data.Model\SalesApplication.Data.Model.csproj">
-      <Project>{7f6a908f-140a-49a6-a53a-c9997a1b854b}</Project>
-      <Name>SalesApplication.Data.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SalesApplication.Data.ORM.Contract\SalesApplication.Data.ORM.Contract.csproj">
       <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
       <Name>SalesApplication.Data.ORM.Contract</Name>

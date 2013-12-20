@@ -10,7 +10,6 @@ using SalesApplication.Data.ORM.Contract;
 using SalesApplication.Data.Adapter.Contract;
 using SalesApplication.Data.Adapter.Legacy.SQLServer;
 using System.Data.SqlClient;
-using SalesApplication.Data.Model;
 using System.Configuration;
 using SalesApplication.Api;
 using System.Web.Http;

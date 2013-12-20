@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SalesApplication.Data.ORM.Contract;
 using SalesApplication.Data.ORM.Base;
-using SalesApplication.Data.Model;
 using System.Data;
 using System.Data.SqlClient;
 using Massive;

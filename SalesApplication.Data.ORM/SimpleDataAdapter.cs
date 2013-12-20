@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SalesApplication.Data.ORM.Contract;
-using SalesApplication.Data.Contract;
 using Simple.Data.SqlServer;
 
 namespace SalesApplication.Data.ORM

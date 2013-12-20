@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SalesApplication.Data.ORM.Contract;
 using Dapper;
-using SalesApplication.Data.Model;
 using System.Data.SqlClient;
 using System.Data;
 using SalesApplication.Data.ORM.Base;
@@ -23,13 +22,12 @@ namespace SalesApplication.Data.ORM
 
         IEnumerable<dynamic> ISalesAppORM.GetCustomersFromSP(string storedProcedureName)
         {
-            IList<Customer> toReturn = null;
+            IEnumerable<dynamic> customers = null; 
 
             try
             {
                 DbConnection.Open();
-                var customers = DbConnection.Query<Customer>(storedProcedureName, commandType: CommandType.StoredProcedure);
-                toReturn = new List<Customer>(customers);
+                customers = DbConnection.Query(storedProcedureName, commandType: CommandType.StoredProcedure);
             }
             catch(Exception ex)
             {
@@ -40,18 +38,17 @@ namespace SalesApplication.Data.ORM
                 DbConnection.Close();
             }
 
-            return toReturn;
+            return customers;
         }
 
         IEnumerable<dynamic> ISalesAppORM.GetCustomerAddressesFromSP(string storedProcedureName)
         {
-            IList<Address> toReturn = null;
+            IEnumerable<dynamic> addresses = null; 
 
             try
             {
                 DbConnection.Open();
-                var addresses = DbConnection.Query<Address>(storedProcedureName, commandType: CommandType.StoredProcedure);
-                toReturn = new List<Address>(addresses);
+                addresses = DbConnection.Query(storedProcedureName, commandType: CommandType.StoredProcedure);
             }
             catch (Exception ex)
             {
@@ -62,18 +59,17 @@ namespace SalesApplication.Data.ORM
                 DbConnection.Close();
             }
 
-            return toReturn;
+            return addresses;
         }
 
         IEnumerable<dynamic> ISalesAppORM.GetCustomerPhoneNumbersFromSP(string storedProcedureName)
         {
-            IList<PhoneNumber> toReturn = null;
+            IEnumerable<dynamic> phoneNumbers = null; 
 
             try
             {
                 DbConnection.Open();
-                var phoneNumbers = DbConnection.Query<PhoneNumber>("ObjCustomer", commandType: CommandType.StoredProcedure);
-                toReturn = new List<PhoneNumber>(phoneNumbers);
+                phoneNumbers = DbConnection.Query("ObjCustomer", commandType: CommandType.StoredProcedure);
             }
             catch (Exception ex)
             {
@@ -84,7 +80,7 @@ namespace SalesApplication.Data.ORM
                 DbConnection.Close();
             }
 
-            return toReturn;
+            return phoneNumbers;
         }
     }
 }
