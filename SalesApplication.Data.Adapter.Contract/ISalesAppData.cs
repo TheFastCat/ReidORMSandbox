@@ -12,13 +12,13 @@ namespace SalesApplication.Data.Adapter.Contract
     /// </summary>
     public interface ISalesAppData
     {
-        Type ORM { get; }
-        
         // TODO define all data operations wanted/needed by the SalesApplication
         IEnumerable<dynamic> GetAllCustomers();
 
         IEnumerable<dynamic> GetAllAddresses();
 
         IEnumerable<dynamic> GetAllPhoneNumbers();
+
+        Type ORM { get; }
     }
 }
