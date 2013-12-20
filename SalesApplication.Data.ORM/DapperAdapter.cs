@@ -67,7 +67,7 @@ namespace SalesApplication.Data.ORM
             try
             {
                 DbConnection.Open();
-                phoneNumbers = DbConnection.Query("ObjCustomer", commandType: CommandType.StoredProcedure);
+                phoneNumbers = DbConnection.Query(storedProcedureName, commandType: CommandType.StoredProcedure);
             }
             catch (Exception ex)
             {
