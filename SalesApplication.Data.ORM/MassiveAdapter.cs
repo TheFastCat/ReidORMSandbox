@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SalesApplication.Data.ORM.Contract;
+﻿using Massive;
 using SalesApplication.Data.ORM.Base;
+using SalesApplication.Data.ORM.Contract;
+using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using Massive;
 
 namespace SalesApplication.Data.ORM
 {
+    /// <summary>
+    /// Massive ORM implementation of ISalesAppORM
+    /// </summary>
+    /// <see cref="https://github.com/robconery/massive/"/>
+    /// <remarks>Massive loads the first connection string it finds from the App.config or Web.config file and creates a DB connection from it.</remarks>
     public class MassiveAdapter : ORMDataConnection, ISalesAppORM
     {
         public MassiveAdapter(IDbConnection dbConnection)
             : base(dbConnection)
-        {
-            //todo: initialize any construction of Massive required components...
-        }
+        {}
 
         IEnumerable<dynamic> ISalesAppORM.GetCustomersFromSP(string storedProcedureName)
         {

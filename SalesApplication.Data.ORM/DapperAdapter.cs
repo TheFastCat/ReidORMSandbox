@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SalesApplication.Data.ORM.Contract;
-using Dapper;
-using System.Data.SqlClient;
-using System.Data;
+﻿using Dapper;
 using SalesApplication.Data.ORM.Base;
-
+using SalesApplication.Data.ORM.Contract;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace SalesApplication.Data.ORM
 {
+    /// <summary>
+    /// Dapper ORM implementation of ISalesAppORM
+    /// </summary>
+    /// <see cref="https://code.google.com/p/dapper-dot-net/"/>
+    /// <remarks>Dapper adds ORM extension methods to the IDBConnection interface</remarks>
     public class DapperAdapter : ORMDataConnection, ISalesAppORM
     {
         public DapperAdapter(IDbConnection dbConnection)
             : base(dbConnection)
-        {
-            //todo: initialize any construction of Dapper required components...
-        }
+        {}
 
         IEnumerable<dynamic> ISalesAppORM.GetCustomersFromSP(string storedProcedureName)
         {

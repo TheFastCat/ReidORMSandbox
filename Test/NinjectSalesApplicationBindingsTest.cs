@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using Ninject;
+﻿using Ninject;
 using Ninject.Modules;
-using System.Diagnostics;
-using SalesApplication.Data.ORM;
-using SalesApplication.Data.ORM.Contract;
+using NUnit.Framework;
 using SalesApplication.Data.Adapter.Contract;
 using SalesApplication.Data.Adapter.Legacy.SQLServer;
+using SalesApplication.Data.ORM;
+using SalesApplication.Data.ORM.Contract;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
+using System.Linq;
 
 namespace Test
 {

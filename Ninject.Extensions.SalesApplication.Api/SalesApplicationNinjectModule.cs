@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Ninject;
-using Ninject.Modules;
-using Ninject.Syntax;
-using System.Configuration;
-using SalesApplication.Data.ORM;
-using SalesApplication.Data.ORM.Contract;
+﻿using Ninject.Modules;
 using SalesApplication.Data.Adapter.Contract;
 using SalesApplication.Data.Adapter.Legacy.SQLServer;
+using SalesApplication.Data.ORM;
+using SalesApplication.Data.ORM.Contract;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 

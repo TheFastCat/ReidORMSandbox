@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using SalesApplication.Data.Adapter.Contract;
+using System.Collections.Generic;
 using System.Web.Http;
-using System.Linq;
-using SalesApplication.Data.Adapter.Contract;
 
 namespace SalesApplication.Api
 {
