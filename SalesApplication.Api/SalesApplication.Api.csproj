@@ -79,6 +79,10 @@
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ninject.Extensions.SalesApplication.Api\Ninject.Extensions.SalesApplication.Api.csproj">
+      <Project>{bad98a34-75ca-4011-a8d1-67e0f41cd5af}</Project>
+      <Name>Ninject.Extensions.SalesApplication.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SalesApplication.Data.Adapter.Contract\SalesApplication.Data.Adapter.Contract.csproj">
       <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
       <Name>SalesApplication.Data.Adapter.Contract</Name>

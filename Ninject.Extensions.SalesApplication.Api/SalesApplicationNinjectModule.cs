@@ -44,8 +44,8 @@ namespace Ninject.Extensions.SalesApplication
         public override void Load()
         {
             Bind<IDbConnection>().To<SqlConnection>().InSingletonScope().WithConstructorArgument("connectionString", CONNECTION_STRING);
-            //Bind<ISalesAppORM>().To<DapperAdapter>().InSingletonScope();
-            Bind<ISalesAppORM>().To<MassiveAdapter>().InSingletonScope();
+            Bind<ISalesAppORM>().To<DapperAdapter>().InSingletonScope();
+            //Bind<ISalesAppORM>().To<MassiveAdapter>().InSingletonScope();
             Bind<ISalesAppData>().To<CapwairData>().InSingletonScope();
         }
     }

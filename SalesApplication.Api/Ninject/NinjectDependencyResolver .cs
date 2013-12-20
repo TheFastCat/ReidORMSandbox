@@ -44,8 +44,7 @@ namespace SalesApplication.Api.Ninject
 
         private void AddBindings()
         {
-            // TODO add API DI/IoC bindings
-            kernel.Bind<ISalesAppData>().To<CapwairData>();
+            // TODO add API DI/IoC bindings ?
         }
 
         public IDependencyScope BeginScope()

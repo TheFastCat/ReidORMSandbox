@@ -43,6 +43,7 @@ namespace Test
         }
 
         [Description("ORM integration test")]
+        [Category("LocalIntegration")]
         [Test, Explicit]
         public void MassiveIntegrationTest()
         {
