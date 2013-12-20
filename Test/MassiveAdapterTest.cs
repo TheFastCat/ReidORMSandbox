@@ -13,7 +13,7 @@ using System.Configuration;
 namespace Test
 {
     /// <summary>
-    /// [TestFixture] for DapperAdapter
+    /// [TestFixture] for SalesApplication.Data.ORM.MassiveAdapter
     /// </summary>
     [Category("LocalIntegration")]
     [TestFixture]

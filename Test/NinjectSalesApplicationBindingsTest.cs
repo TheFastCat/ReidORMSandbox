@@ -18,10 +18,10 @@ using System.Configuration;
 namespace Test
 {
     /// <summary>
-    /// [TestFixture] for Ninject.Extensions.SalesApplication bindings.
+    /// [TestFixture] for verifying different NinjectModule binding configurations.
     /// </summary>
     [TestFixture]
-    public class NinjectExtensionsSalesApplicationTest
+    public class NinjectSalesApplicationBindingsTest
     {
         IKernel _kernel;
 

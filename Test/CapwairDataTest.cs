@@ -15,7 +15,7 @@ using System.Configuration;
 namespace Test
 {
     /// <summary>
-    /// [TestFixture] for SalesAppORMDapperImpl
+    /// [TestFixture] for SalesApplication.Data.Adapter.Legacy.SQLServer.CapwairData
     /// </summary>
     [TestFixture]
     public class CapwairDataTest

@@ -64,7 +64,7 @@
     <Compile Include="CapwairDataTest.cs" />
     <Compile Include="MassiveAdapterTest.cs" />
     <Compile Include="DapperAdapterTest.cs" />
-    <Compile Include="NinjectExtensionsSalesApplicationTest.cs" />
+    <Compile Include="NinjectSalesApplicationBindingsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
