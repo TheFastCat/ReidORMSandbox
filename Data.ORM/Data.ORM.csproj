@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B4E446B-9149-416F-AA83-A55F955487AE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{EFE90E25-B297-4448-BE73-4AF3E2408AD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App</RootNamespace>
-    <AssemblyName>App</AssemblyName>
+    <RootNamespace>Data.ORM</RootNamespace>
+    <AssemblyName>Data.ORM</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,10 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
-      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.13\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="NPoco">
+      <HintPath>..\packages\NPoco.2.2.47\lib\net40\NPoco.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,29 +48,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DapperAdapter.cs" />
+    <Compile Include="Base\ORMDataConnection.cs" />
+    <Compile Include="Implementation\Massive.cs" />
+    <Compile Include="MassiveAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Data.Adapter.Contract\Data.Adapter.Contract.csproj">
-      <Project>{65ef7049-d45d-4c64-9e8d-e6081944b138}</Project>
-      <Name>Data.Adapter.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data.ORM.Contract\Data.ORM.Contract.csproj">
       <Project>{35d3b13d-5104-4945-a33f-f2e1ce29b2a4}</Project>
       <Name>Data.ORM.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data.ORM\Data.ORM.csproj">
-      <Project>{efe90e25-b297-4448-be73-4af3e2408ad3}</Project>
-      <Name>Data.ORM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ninject.Extensions.Api\Ninject.Extensions.Api.csproj">
-      <Project>{bad98a34-75ca-4011-a8d1-67e0f41cd5af}</Project>
-      <Name>Ninject.Extensions.Api</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

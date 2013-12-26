@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using SalesApplication.Api;
-using SalesApplication.Data.Adapter.Contract;
-using SalesApplication.Data.Adapter.Legacy.SQLServer;
-using SalesApplication.Data.ORM;
-using SalesApplication.Data.ORM.Contract;
+using Api;
+using Data.Adapter.Contract;
+using Data.Adapter.Legacy.SQLServer;
+using Data.ORM;
+using Data.ORM.Contract;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -21,7 +21,7 @@ namespace Test
         CustomerAddresesController _customerAddressController;
         CustomerPhonesController   _customerPhonesController;
 
-        ISalesAppData _salesAppData;
+        IRepository _appRepository;
         private string CONNECTION_STRING;
         private readonly string CONFIGURATION_CONNECTION_STRING = "Capwair.Test";
 
@@ -31,12 +31,12 @@ namespace Test
             // manually inject ORM into ctor...
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             CONNECTION_STRING = ConfigurationManager.ConnectionStrings[CONFIGURATION_CONNECTION_STRING].ConnectionString;
-            ISalesAppORM iSalesAppORM = new DapperAdapter(new SqlConnection(CONNECTION_STRING));
-            _salesAppData = new CapwairData(iSalesAppORM);
+            IORM iORM = new DapperAdapter(new SqlConnection(CONNECTION_STRING));
+            _appRepository = new SqlServerRepository(iORM);
 
-            _customersController       = new CustomerController(_salesAppData);
-            _customerAddressController = new CustomerAddresesController(_salesAppData);
-            _customerPhonesController  = new CustomerPhonesController(_salesAppData);
+            _customersController       = new CustomerController(_appRepository);
+            _customerAddressController = new CustomerAddresesController(_appRepository);
+            _customerPhonesController  = new CustomerPhonesController(_appRepository);
         }
 
         [TestFixtureTearDown]
@@ -59,9 +59,9 @@ namespace Test
         [Test]
         public void CompositionTest()
         {
-            Assert.IsNotNull(_salesAppData);
-            Assert.IsInstanceOf<CapwairData>(_salesAppData);
-            Assert.AreEqual(typeof(DapperAdapter), _salesAppData.ORM);
+            Assert.IsNotNull(_appRepository);
+            Assert.IsInstanceOf<SqlServerRepository>(_appRepository);
+            Assert.AreEqual(typeof(DapperAdapter), _appRepository.ORM);
         }
 
         [Description("End-to-end integration test")]
